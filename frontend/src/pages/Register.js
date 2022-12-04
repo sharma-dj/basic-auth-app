@@ -1,10 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../App.css'
 import axios from 'axios'
 
 const baseUrl = 'http://localhost:5000/users';
+const initialState = {}
 
 const Register = () => {
+  const [value,setValue] = useState(initialState)
 
   const handleSubmit = (e) => {
     e.preventDefault();

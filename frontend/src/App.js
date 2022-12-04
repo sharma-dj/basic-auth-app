@@ -12,10 +12,7 @@ const App = () => {
         <nav id='menu'>
           <ul>
             <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
+              <Link to="/">Dashboard</Link>
             </li>
             <li>
               <Link to="/register">Register</Link>

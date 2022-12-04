@@ -2,8 +2,7 @@ import React from 'react'
 import './App.css'
 import {BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Register from './pages/Register'
-import Login from './pages/Login'
-import Home from './pages/Home'
+import Dashboard from './pages/Dashboard'
 
 const App = () => {
   return (
@@ -20,8 +19,7 @@ const App = () => {
           </ul>
         </nav>
         <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
+          <Route exact path='/' element={<Dashboard />} />
           <Route path='/register' element={<Register />} />
         </Routes>
       </Router>

@@ -19,13 +19,11 @@ const Register = () => {
   }
 
   const handleChange = (e) => {
-    console.log(e.target);
+    setValues({...values,[e.target.name]:e.target.value})
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value; 
+    const {name,email,password,isMember} = values
     console.log({'uname':name,email,password});
     
     // axios.post(`${baseUrl}/add`, {

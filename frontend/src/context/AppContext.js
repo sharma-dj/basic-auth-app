@@ -1,9 +1,25 @@
-import React from 'react'
+import React,{useState,useReducer,useContext,createContext} from 'react'
+import Reducer from './Reducer';
 
-const AppContext = () => {
+const initialState = {
+  user:null,
+  token:null
+}
+
+const appContext = createContext();
+
+const AppProvider = ({children}) => {
+  const [values,dispatch] = useReducer(Reducer, initialState)
+  
   return (
-    <div>AppContext</div>
+    <appContext.Provider value={{...values}}>
+      {children}
+    </appContext.Provider>
   )
 }
 
-export default AppContext
+const useAppContext = () => {
+  return useContext(appContext);
+}
+
+export {AppProvider,useAppContext,initialState}

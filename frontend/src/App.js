@@ -11,16 +11,16 @@ const App = () => {
         <nav id='menu'>
           <ul>
             <li>
-              <Link to="/">Dashboard</Link>
+              <Link to="/">Register</Link>
             </li>
             <li>
-              <Link to="/register">Register</Link>
+              <Link to="/dashboard">Dashboard</Link>
             </li>
           </ul>
         </nav>
         <Routes>
-          <Route exact path='/' element={<Dashboard />} />
-          <Route path='/register' element={<Register />} />
+          <Route exact path='/' element={<Register />} />
+          <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
       </Router>
     </div>

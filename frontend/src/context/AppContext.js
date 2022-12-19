@@ -11,9 +11,13 @@ const appContext = createContext();
 
 const AppProvider = ({children}) => {
   const [values,dispatch] = useReducer(Reducer, initialState)
+
+  const registerUser = async (currentUser) => {
+    console.log(currentUser);
+  }
   
   return (
-    <appContext.Provider value={{...values}}>
+    <appContext.Provider value={{...values,registerUser}}>
       {children}
     </appContext.Provider>
   )

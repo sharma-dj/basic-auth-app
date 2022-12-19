@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import '../App.css'
 import axios from 'axios'
 import Forminput from '../componets/Forminput';
+import { registerUser } from '../context/AppContext';
 
 const baseUrl = 'http://localhost:5000/users';
 const initialState = {
@@ -26,16 +27,17 @@ const Register = () => {
     const {name,email,password,isMember} = values
     console.log({'uname':name,email,password});
     
-    // axios.post(`${baseUrl}/add`, {
-    //     'name':name,
-    //     'email':email,
-    //     'password': password
-    //   }
-    // ).then((res) => {
-    //   console.log('user added!');
-    // }).catch((err) =>
-    //   console.log('Err'+err)
-    // );
+    if(!email || !password || (!isMember && !name)) {
+      return
+    }
+
+    const currentUser = {name, email, password}
+
+    if(isMember) {
+      console.log('Already a member');
+    } else {
+      registerUser(currentUser)
+    }
   }
 
   return (

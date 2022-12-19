@@ -1,8 +1,9 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import '../App.css'
 import axios from 'axios'
 import Forminput from '../componets/Forminput';
-import { registerUser } from '../context/AppContext';
+import { useAppContext } from '../context/AppContext';
+import { useNavigate } from 'react-router-dom'
 
 const baseUrl = 'http://localhost:5000/users';
 const initialState = {
@@ -14,6 +15,9 @@ const initialState = {
 
 const Register = () => {
   const [values,setValues] = useState(initialState)
+
+  const {registerUser,user} = useAppContext()
+  const navigate = useNavigate()
 
   const toggleMember = () => {
     setValues({...values, isMember:!values.isMember})
@@ -38,6 +42,14 @@ const Register = () => {
     } else {
       registerUser(currentUser)
     }
+
+    useEffect({
+      if(user) {
+        setTimeout(() => {
+          navigate('/')
+        },2000)
+      }
+    },[user,navigate])
   }
 
   return (

@@ -17,6 +17,22 @@ const Reducer = (state,action) => {
     case REGISTER_USER_ERROR:
       return {...state}
       break;
+
+    case LOGIN_USER_BEGIN:
+        return {...state}
+        break;
+      
+      case LOGIN_USER_SUCCESS:
+        return {
+          ...state,
+          user:action.payload.user,
+          token:action.payload.token
+        }
+        break;
+      
+      case LOGIN_USER_ERROR:
+        return {...state}
+        break;
     
     default:
       throw new Error(`no such ${action.type} found`)

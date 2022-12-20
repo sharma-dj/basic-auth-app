@@ -19,10 +19,8 @@ const Reducer = (state,action) => {
       break;
     
     default:
-      return {...state}
-      break;
-  }  
-  throw new Error(`no such ${action.type} found`)
+      throw new Error(`no such ${action.type} found`)
+  }
 }
 
 export default Reducer

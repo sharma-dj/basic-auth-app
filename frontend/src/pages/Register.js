@@ -43,15 +43,15 @@ const Register = () => {
     } else {
       registerUser(currentUser)
     }
-
-    useEffect({
-      if(user) {
-        setTimeout(() => {
-          navigate('/')
-        },2000)
-      }
-    },[user,navigate])
   }
+
+  useEffect({
+    if(user) {
+      setTimeout(() => {
+        navigate('/')
+      },2000)
+    }
+  },[user,navigate])
 
   return (
     <>

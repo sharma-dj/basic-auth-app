@@ -16,6 +16,8 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.use(cors());
 app.use(express.json());
+
+mongoose.set("strictQuery", false);
 mongoose.connect(uri,{ useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
 

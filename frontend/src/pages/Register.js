@@ -1,11 +1,10 @@
 import React,{useState,useEffect} from 'react'
 import '../App.css'
-import axios from 'axios'
 import Forminput from '../componets/Forminput';
 import { useAppContext } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom'
 
-const baseUrl = 'http://localhost:5000/users';
+//const baseUrl = 'http://localhost:5000/users';
 const initialState = {
   "name" : "",
   "email" : "",
@@ -55,18 +54,18 @@ const Register = () => {
 
   return (
     <>
-        <h3>{!values.isMember ? 'Login' : 'Register' }</h3>
+        <h3>{values.isMember ? 'Login' : 'Register' }</h3>
         <div className="container">
             <form action="#" onSubmit={(e) => handleSubmit(e)}>
-            { values.isMember && (
+            { !values.isMember && (
                 <Forminput label="Name" id="name" name="name" placeholder="Your name .." type="text" value={values.name} handleChange={handleChange} />
             )}
                 <Forminput label="Email" id="email" name="email" placeholder="Your email .." type="text" value={values.email} handleChange={handleChange} />
                 <Forminput label="Password" id="password" name="password" placeholder="password" type="password" value={values.password} handleChange={handleChange} />
                 <input type="submit" value="Submit" />
             </form>
-            <label>{ values.isMember ? 'Already a member?' : 'Not a member yet?'}</label>
-            <button onClick={toggleMember}>{values.isMember ? 'Login' : 'Register'}</button>
+            <label>{ !values.isMember ? 'Already a member?' : 'Not a member yet?'}</label>
+            <button onClick={toggleMember}>{!values.isMember ? 'Login' : 'Register'}</button>
         </div>
     </>
   )

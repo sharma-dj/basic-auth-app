@@ -12,7 +12,6 @@ const register = async (req,res) => {
     /*
         const {name,email,password} = req.body
         const newuser = new User({name,email,password});
-	
 	    newuser.save()
 		 .then(() => res.json({msg:'user added',data:{name,email,password}}))
 		 .catch(err => res.status(400).json(err));

@@ -28,7 +28,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const {name,email,password,isMember} = values
-    console.log({'uname':name,email,password});
+    //console.log({'uname':name,email,password});
     
     if(!email || !password || (!isMember && !name)) {
       return
@@ -37,7 +37,7 @@ const Register = () => {
     const currentUser = {name, email, password}
 
     if(isMember) {
-      console.log('Already a member');
+      //console.log('Already a member');
       loginUser(currentUser)
     } else {
       registerUser(currentUser)

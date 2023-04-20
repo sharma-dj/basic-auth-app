@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 const app = express()
 
 import dotenv from 'dotenv'
+// required for using process.env
 dotenv.config()
 
 const port = process.env.PORT || 5000;

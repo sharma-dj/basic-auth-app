@@ -34,5 +34,5 @@ import routes from './routes/authRoutes.js'
 app.use('/api/v1/auth',routes)
 
 app.listen(port,() => {
-	console.log(`Server is running at port ${port}`);
+	console.log(`Server is running at port ${port}....`);
 });
